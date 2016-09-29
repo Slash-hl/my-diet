@@ -1,0 +1,17 @@
+### WebStorm ###
+.idea
+
+### NPM ###
+node_modules
+
+### Node ###
+# Logs
+logs
+*.log
+npm-debug.log*
+
+### Typescript ###
+typings
+
+### App ###
+dist
