@@ -1,14 +1,23 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule}  from '@angular/platform-browser';
-import {AppComponent} from './app.component';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+/*
+ * Platform and Environment providers/directives/pipes
+ */
+import { ROUTES } from './app.routes';
+import { AppComponent as App } from './app.component';
+import { Home } from './pages/home';
+
 @NgModule({
     imports: [
-        BrowserModule
+        BrowserModule,
+        RouterModule.forRoot(ROUTES, {useHash: true})
     ],
     declarations: [
-        AppComponent
+        App,
+        Home
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [App]
 })
 export class AppModule {
 }
