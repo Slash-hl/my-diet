@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     template: `
@@ -7,7 +7,7 @@ import {ActivatedRoute} from '@angular/router';
         <pre>this.localState = {{ localState | json }}</pre>
       `
 })
-export class About {
+export class AboutComponent implements OnInit{
     localState: any;
 
     constructor(public route: ActivatedRoute) {

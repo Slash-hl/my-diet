@@ -1,14 +1,12 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {RouterModule} from '@angular/router';
-
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 /*
  * Platform and Environment providers/directives/pipes
  */
-import {ROUTES} from './app.routes';
-import {AppComponent as App} from './app.component';
-import {Home} from './home';
-import {About} from './about';
+import { ROUTES } from './app.routes';
+import { AppComponent as App } from './app.component';
+import { Home } from './pages/home';
 
 @NgModule({
     imports: [
@@ -17,8 +15,7 @@ import {About} from './about';
     ],
     declarations: [
         App,
-        Home,
-        About
+        Home
     ],
     bootstrap: [App]
 })
