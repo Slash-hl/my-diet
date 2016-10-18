@@ -6,5 +6,4 @@ import {Component} from '@angular/core';
         <p>This is main page</p>
     `
 })
-export class Home {
-}
+export class HomeComponent {}

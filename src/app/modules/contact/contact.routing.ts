@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ContactComponent } from './contact.component';
+import { ContactComponent } from './../../components/contact/contact.component';
 import { ContactSectionComponent } from './contact-section.component';
 
 const routes: Routes = [
@@ -23,5 +23,4 @@ const contactRoutes: ModuleWithProviders = RouterModule.forChild(routes);
     imports: [contactRoutes],
     declarations: [ContactSectionComponent]
 })
-export class ContactRouting {
-}
+export class ContactRouting {}
