@@ -1,9 +1,10 @@
-import { Routes } from '@angular/router';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import { Home } from './pages/home';
+import { HomeComponent } from './components/common/home/home.component';
 
-export const ROUTES: Routes = [
-    {path: '', component: Home},
+const routes: Routes = [
+    {path: '', component: HomeComponent},
     {path: 'about', loadChildren: () => new Promise(resolve => {
         (require as any).ensure([], (require: any) => resolve(require('./modules/about/about.module').AboutModule))
     })},
@@ -14,3 +15,14 @@ export const ROUTES: Routes = [
         (require as any).ensure([], (require: any) => resolve(require('./modules/contact/contact.module').ContactModule))
     })}
 ];
+
+const appRoutes: ModuleWithProviders = RouterModule.forRoot(routes, {useHash: true});
+
+@NgModule({
+    imports: [appRoutes],
+    declarations: [
+        HomeComponent
+    ],
+    exports: [RouterModule]
+})
+export class AppRouting {}
