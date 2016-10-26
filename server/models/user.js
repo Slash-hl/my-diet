@@ -17,6 +17,7 @@ const User = new Schema({
 
 User.methods = {
     authenticate(enteredPassword) {
+        // TODO: Secure password checking
         return enteredPassword === this.password;
     }
 };
