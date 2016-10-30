@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 const helpers = require('./helpers');
 
 module.exports = {
@@ -15,6 +16,12 @@ module.exports = {
     },
 
     module: {
+        preLoaders: [
+            {
+                test: /\.scss$/,
+                loader: 'import-glob'
+            }
+        ],
         loaders: [
             {
                 test: /\.ts$/,
@@ -29,14 +36,9 @@ module.exports = {
                 loader: 'file?name=assets/[name].[hash].[ext]'
             },
             {
-                test: /\.css$/,
-                exclude: helpers.root('src', 'app'),
-                loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
-            },
-            {
-                test: /\.css$/,
-                include: helpers.root('src', 'app'),
-                loader: 'raw'
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                loaders:[ExtractTextPlugin.extract('css'), 'to-string', 'css', 'sass']
             }
         ]
     },
