@@ -3,9 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
     template: `
-        <h1>About</h1>
-        <pre>this.localState = {{ localState | json }}</pre>
-      `
+        <div class="about">
+            <h1>About</h1>
+            <pre>this.localState = {{ localState | json }}</pre>
+        </div>
+    `
 })
 export class AboutComponent implements OnInit{
     localState: any;

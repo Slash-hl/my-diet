@@ -1,0 +1,27 @@
+@import '../../public/styles/styles.scss';
+@import './components/**/*.scss';
+
+main {
+    padding: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    display: block;
+
+    & .test {
+        color: grey;
+    }
+}
+.app-components {
+    display: block;
+}
+
+/*Nesting*/
+$my-div-width: 100%;
+$mainH2TextColor: #0b97c4;
+.my-div {
+    width: $my-div-width;
+    h2 {
+        color: $mainH2TextColor;
+    }
+}
