@@ -8,6 +8,12 @@ module.exports = {
     },
 
     module: {
+        preLoaders: [
+            {
+                test: /\.scss$/,
+                loader: 'import-glob'
+            }
+        ],
         loaders: [
             {
                 test: /\.ts$/,
@@ -23,14 +29,20 @@ module.exports = {
                 loader: 'null'
             },
             {
-                test: /\.css$/,
-                exclude: helpers.root('src', 'app'),
-                loader: 'null'
-            },
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                loaders:['to-string', 'css', 'sass']
+            }
+        ],
+        postLoaders: [
             {
-                test: /\.css$/,
-                include: helpers.root('src', 'app'),
-                loader: 'raw'
+                test: /\.ts$/,
+                loader: 'istanbul-instrumenter-loader',
+                include: helpers.root('src/app'),
+                exclude: [
+                    /\.spec\.ts$/,
+                    /node_modules/
+                ]
             }
         ]
     }
