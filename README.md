@@ -1,1 +1,1 @@
-# my-diet
+# ng2 App
