@@ -1,5 +1,7 @@
-@import '../../public/styles/styles.scss';
-@import './components/**/*.scss';
+body {
+    background: #0147A7;
+    color: #fff;
+}
 
 main {
     padding: 1em;
@@ -12,6 +14,7 @@ main {
         color: grey;
     }
 }
+
 .app-components {
     display: block;
 }

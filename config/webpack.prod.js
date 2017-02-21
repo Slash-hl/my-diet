@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const commonConfig = require('./webpack.common');
 const helpers = require('./helpers');
 
@@ -27,9 +26,6 @@ module.exports = webpackMerge(commonConfig, {
             mangle: {
                 keep_fnames: true
             }
-        }),
-        new ExtractTextPlugin('[name].[hash].css', {
-            allChunks: true
         }),
         new webpack.DefinePlugin({
             'process.env': {

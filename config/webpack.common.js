@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const helpers = require('./helpers');
 
 module.exports = {
@@ -15,12 +14,6 @@ module.exports = {
     },
 
     module: {
-        preLoaders: [
-            {
-                test: /\.scss$/,
-                loader: 'import-glob'
-            }
-        ],
         loaders: [
             {
                 test: /\.ts$/,
@@ -37,7 +30,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                loaders:[ExtractTextPlugin.extract('css'), 'to-string', 'css', 'sass']
+                loaders: ['raw-loader', 'sass-loader']
             }
         ]
     },

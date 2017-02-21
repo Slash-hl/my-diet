@@ -5,6 +5,7 @@ import { ProductService } from './../../shared/services/product.service';
 
 @Component({
     selector: 'product-list',
+    styleUrls: ['./productList.component.scss'],
     template: `
         <div *ngIf="products" class="product-list">
           <div *ngFor="let product of products">
