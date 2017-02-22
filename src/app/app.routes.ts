@@ -1,18 +1,18 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './components/common/home/home.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'about', loadChildren: () => new Promise(resolve => {
-        (require as any).ensure([], (require: any) => resolve(require('./modules/about/about.module').AboutModule))
+        (require as any).ensure([], (require: any) => resolve(require('./about/about.module').AboutModule))
     })},
     {path: 'products', loadChildren: () => new Promise(resolve => {
-        (require as any).ensure([], (require: any) => resolve(require('./modules/products/products.module').ProductModule))
+        (require as any).ensure([], (require: any) => resolve(require('./products/products.module').ProductModule))
     })},
     {path: 'contact', loadChildren: () => new Promise(resolve => {
-        (require as any).ensure([], (require: any) => resolve(require('./modules/contact/contact.module').ContactModule))
+        (require as any).ensure([], (require: any) => resolve(require('./contact/contact.module').ContactModule))
     })}
 ];
 

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Product } from './../../shared/models/product';
-import { ProductService } from './../../shared/services/product.service';
+import { Product } from './../shared/models/product';
+import { ProductService } from './../shared/services/product.service';
 
 @Component({
     selector: 'product-list',
-    styleUrls: ['./productList.component.scss'],
+    styleUrls: ['productList.component.scss'],
     template: `
         <div *ngIf="products" class="product-list">
           <div *ngFor="let product of products">

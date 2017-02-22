@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    styleUrls: ['./about.component.scss'],
+    styleUrls: ['about.component.scss'],
     template: `
         <div class="about">
             <h1>About</h1>
